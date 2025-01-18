@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family:'Nunito', sans-serif;
+}
+
+.header-container{
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);    
+    padding-inline: 24px;
+}
+
+.header-content{
+    margin-inline: auto;
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title{
+    font-weight: 800;
+}
+
+main{
+    margin-inline: auto;
+    max-width: 1280px;
+    padding: 24px;
+}
+
+.countries-container{
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.countries-container a{
+    text-decoration: none;
+    color: inherit;    
+    display: inline-block;
+    
+}
+.country-card{
+    width: 250px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: aliceblue;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+    padding-bottom: 36px;
+    transition: all 0.2s ease-in-out;
+    margin-block: 16px;
+}
+.country-card:hover{
+    transform: scale(1.01);
+}
+
+.country-card img{
+    width: 100%;
+    background: #faf9f9;
+}
+
+.country-card-text{
+    padding-inline: 16px; 
+}
+
+.country-card-text h3{
+    margin-block: 16px;
+    font-size: 20px;
+}
+
+.country-card-text p{
+    margin-block: 8px;
+    font-size: 12px;
+}
