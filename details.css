@@ -96,7 +96,9 @@ a{
     align-items: center;
     gap: 24px;
 }
-
+.country-flag-container img{
+    border: 1px solid rgba(128, 128, 128, 0.489);
+}
 .border-countries a button{
     padding-inline: 12px;
     padding-block: 8px;

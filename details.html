@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="details.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,600,800" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="script.js" defer></script>
     <script src="details.js" defer></script>
+    
 </head>
 <body>
     <Header class="header-container">
         <div class="header-content">
-            <h1 class="title" >Where I am ?</h1>
-            <p><i class="fa-regular fa-moon"></i>&nbsp;&nbsp; Dark Mode</p>
+            <a href="/index.html"><h1 class="title" >Where I am ?</h1></a> 
+            <button class="mode"></button>
         </div>
     </Header>
     <main>
     
-        <button class="back-btn"><a href="/index.html"><i class="fa-solid fa-arrow-left-long"></i>&nbsp; back</a></button>
+        <button class="back-btn" onclick={history.back()}><i class="fa-solid fa-arrow-left-long"></i>&nbsp; back</button>
         <div class="country-details-container">
             
         </div>

@@ -23,6 +23,7 @@ function createCountryFullDetails({flags,name,population,region,subregion,capita
                 <div class="country-details-wrapper">
                 <div class="country-flag-container">
                     <img src="${flags.svg}" alt="${flags.alt}">
+                     
                 </div>
                 <div class="country-detail-container">
                     <h1 class="country-name">${name.common}</h1>
@@ -40,18 +41,42 @@ function createCountryFullDetails({flags,name,population,region,subregion,capita
                             <p><b>Symbol:</b> ${getCurrencies(currencies).symbol}</p>
                             <p><b>Languages:</b> ${getLanguages(languages)}</p>
                         </div>
-                    </div>
+                    </div>                    
                     <div class="border-countries">
-                        <h3>Border Countries:</h3>
-                        <a href=""><button>Sri Lanka</button></a>
-                        <a href=""><button>Bhutan</button></a>
-                        <a href=""><button>Nepal</button></a>
-                    </div>
+                        
+                    </div>               
                 </div>
-            </div>`
-    
+            </div>`    
             countryDetailsContainer.appendChild(detailsWrapper);
+            const borderCountries = document.querySelector('.border-countries');
+            borderCountries.appendChild(getBorderCard(borders));
+            
 }
+
+function getBorderCard(borderArr){ 
+    const div = document.createElement('div');
+    const h3 = document.createElement('h3');
+    h3.textContent="Border Countries:";
+    div.appendChild(h3);
+    if(borderArr){
+        borderArr.forEach(countryCode => {
+            fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+            .then((res)=> res.json())
+            .then(([countryInfo])=>{         
+            const anchor = document.createElement('a');
+            anchor.href=`/details.html?name=${countryInfo.name.common}`
+            const button = document.createElement('button');
+            button.textContent=countryInfo.name.common;
+            anchor.appendChild(button);
+            div.appendChild(anchor);
+            }).catch((error)=>{
+                console.log(error);                
+            })
+        });
+    }
+    return div;
+}
+
 
 function getNativeName(nativeName){
     let names="";

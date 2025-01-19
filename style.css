@@ -3,8 +3,18 @@
 }
 
 body{
+    --background-color: hsl(207, 26%, 17%) ;
+    --elements-color:hsl(209, 23%, 22%);
+    --text-color:hsl(0, 0%, 100%);
     margin: 0;
     font-family:'Nunito', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+body.light-mode{
+    --background-color: hsl(0, 0%, 98%) ;
+    --elements-color: hsl(0, 0%, 100%);
+    --text-color:hsl(200, 15%, 8%);
 }
 
 .header-container{
@@ -12,12 +22,25 @@ body{
     padding-inline: 24px;
 }
 
+
 .header-content{
     margin-inline: auto;
     max-width: 1280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.header-content a{
+    text-decoration-line: none;
+    color: inherit;
+}
+
+.mode{
+    border: none;
+    cursor: pointer;
+    background-color: var(--background-color);
+    transition: all 0.2s ease-in-out;
 }
 
 .title{
@@ -29,7 +52,50 @@ main{
     max-width: 1280px;
     padding: 24px;
 }
+.search-filter-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.serach-container{
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 8px 16px;
+    border-radius: 5px;
+
+}
+
+.serach-container input{
+    border: none;
+    overflow: hidden;
+    outline: none;
+    margin-left: 12px;
+    flex-grow: 1;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.serach-container i{
+    color: var(--text-color)
+}
+
+.filter{
+    width: 250px;
+    height: 100%;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+}
 .countries-container{
     padding: 24px;
     display: flex;
@@ -48,7 +114,7 @@ main{
     width: 250px;
     cursor: pointer;
     border-radius: 5px;
-    background-color: aliceblue;
+    background-color: var(--background-color);
     box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
     overflow: hidden; 
     padding-bottom: 36px;
@@ -62,6 +128,7 @@ main{
 .country-card img{
     width: 100%;
     background: #faf9f9;
+    overflow: hidden;
 }
 
 .country-card-text{
